@@ -2,11 +2,13 @@ import jobsData from "../data/jobsData.json";
 
 const JobCard = () => {
   return (
-    <div className="w-full mx-4 md:mx-24 lg:mx-36">
+    <div className="w-full mx-6 md:mx-24 lg:mx-36">
       {jobsData.map((job) => (
         <div
           key={job.id}
-          className="border-2 rounded-md p-4 mb-6 bg-white drop-shadow-xl border-l-4"
+          className={`border-2 rounded-md p-4 mb-6 bg-white drop-shadow-xl ${
+            job.featured ? "border-left-featured" : ""
+          }`}
         >
           <div className="flex flex-col md:flex-row justify-between">
             <div className="flex flex-col  md:flex-row items-start md:items-center">
